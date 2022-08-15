@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <link rel="stylesheet" href="Practice.css" />
+  <title>first React</title>
+</head>
+
+<body>
+  <div class="mainDiv"></div>
+  <div id="text"></div>
+  <div id="images"></div>
+  <script type="text/babel">
+    function HomeClick() {
+      const home = () => {
+        alert("home button clicked. ");
+      };
+      return <button onClick={home}> Home</button>;
+    }
+    function CasualClick() {
+      const btn = () => {
+        alert("Casual button clicked. ");
+      };
+      return <button onClick={btn}> Casual</button>;
+    }
+    function ShoesClick() {
+      const btn = () => {
+        alert("Shoes button clicked. ");
+      };
+      return <button onClick={btn}> Shoes</button>;
+    }
+    function AboutClick() {
+      const btn = () => {
+        alert("About Us button clicked. ");
+      };
+      return <button onClick={btn}> About us</button>;
+    }
+    class Navigation extends React.Component {
+      render() {
+        return (
+          <div class="header">
+
+            <div>
+              <HomeClick />
+            </div>
+            <div>
+              <ShoesClick />
+            </div>
+            <div>
+              {" "}
+              <CasualClick />
+            </div>
+            <div>
+              {" "}
+              <AboutClick />
+            </div>
+            <input type=" text " name="search" placeholder=" search .." />
+            <img src="https://p.kindpng.com/picc/s/477-4773940_nike-brand-hd-png-download.png" alt="Nike"></img>
+          </div>
+        );
+      }
+    }
+    class Desc extends React.Component {
+      render() {
+        return (
+          <div class="description">
+            <h2> Explore The World Of Shoes.</h2>
+            <div class="btns">
+              <button>Shop</button>
+              <button>More..</button>
+            </div>
+          </div>
+        );
+      }
+    }
+
+    class Pic_shoes extends React.Component {
+      render() {
+        return (
+          <div>  <img class="mainImage"
+            src="https://p.kindpng.com/picc/s/326-3266334_shoe-hd-png-download.png"
+            // src="https://p.kindpng.com/picc/s/39-390425_nike-shoes-png-picsart-png-shoes-hd-transparent.png"
+            alt="shoes"
+          ></img>
+           <div class="showImage">
+            <img src="https://p.kindpng.com/picc/s/345-3455822_nike-air-max-270-mens-hd-png-download.png" alt="shoes1"></img>
+            <img src="https://p.kindpng.com/picc/s/345-3455908_nike-air-max-tailwind-4-sunset-cn9658-001.png" alt="shoes2"></img>
+            <img src="https://p.kindpng.com/picc/s/357-3578217_nike-air-zoom-spiridon-16-se-total-orange.png" alt="shoes3"></img>
+            </div>
+          </div>
+        );
+      }
+    }
+    ReactDOM.render(
+      <Navigation />,
+      document.getElementsByClassName("mainDiv")[0]
+    );
+    ReactDOM.render(<Desc />, document.getElementById("text"));
+    ReactDOM.render(<Pic_shoes />, document.getElementById("images"));
+  </script>
+</body>
+
+</html>
